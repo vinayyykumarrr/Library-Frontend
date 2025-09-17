@@ -1,0 +1,17 @@
+
+<div class="toolbar card">
+  <h2>Manage Books</h2>
+  <span class="spacer"></span>
+  <a class="btn" routerLink="/admin/books/new">+ New Book</a>
+</div>
+<div class="card">
+  <table class="table">
+    <thead><tr><th>ID</th><th>Title</th><th>Author</th><th>ISBN</th><th>Avail</th><th></th></tr></thead>
+    <tbody>
+      <tr *ngFor="let b of books()">
+        <td>{{ b.id }}</td><td>{{ b.title }}</td><td>{{ b.author }}</td><td>{{ b.isbn }}</td><td>{{ b.available ? 'Yes' : 'No' }}</td>
+        <td><a class="btn outline" [routerLink]="['/admin/books', b.id]">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

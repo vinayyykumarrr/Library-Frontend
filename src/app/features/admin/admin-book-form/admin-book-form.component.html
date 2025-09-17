@@ -1,0 +1,11 @@
+
+<div class="card form-card">
+  <h2>{{ id ? 'Edit Book' : 'New Book' }}</h2>
+  <form (ngSubmit)="save()" #f="ngForm" class="grid">
+    <input class="input" name="title" [(ngModel)]="model.title" placeholder="Title" required />
+    <input class="input" name="author" [(ngModel)]="model.author" placeholder="Author" required />
+    <input class="input" name="isbn" [(ngModel)]="model.isbn" placeholder="ISBN" required />
+    <label><input type="checkbox" name="available" [(ngModel)]="model.available"/> Available</label>
+    <button class="btn" [disabled]="f.invalid">Save</button>
+  </form>
+</div>

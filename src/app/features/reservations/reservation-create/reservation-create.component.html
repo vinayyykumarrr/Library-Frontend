@@ -1,0 +1,9 @@
+
+<div class="card form-card">
+  <h2>Reserve Book</h2>
+  <form (ngSubmit)="submit()" #f="ngForm" class="grid">
+    <label>Issue date <input class="input" type="date" required name="issue" [(ngModel)]="issue"/></label>
+    <label>Return date <input class="input" type="date" required name="ret" [(ngModel)]="ret"/></label>
+    <button class="btn" [disabled]="f.invalid || loading">{{ loading? 'Reserving…' : 'Reserve' }}</button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<div class="card" *ngIf="book() as b">
+  <h2>{{ b.title }}</h2>
+  <p class="muted">by {{ b.author }} • ISBN: {{ b.isbn }}</p>
+  <p>Status: <span class="badge">{{ b.available ? 'Available' : 'Unavailable' }}</span></p>
+
+  <div class="actions">
+    <a class="btn outline" routerLink="/books">← Back</a>
+    <a class="btn"
+       [class.outline]="!b.available"
+       [routerLink]="['/books', b.id, 'reserve']"
+       [attr.aria-disabled]="!b.available">Reserve</a>
+  </div>
+</div>

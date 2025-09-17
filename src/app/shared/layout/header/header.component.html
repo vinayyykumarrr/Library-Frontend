@@ -1,0 +1,19 @@
+
+<header>
+  <div class="container toolbar">
+    <a routerLink="/" class="brand">📚 Library</a>
+    <a routerLink="/books">Books</a>
+    <a routerLink="/reservations" *ngIf="isLoggedIn()">My Reservations</a>
+    <a routerLink="/admin/books" *ngIf="isAdmin()">Admin</a>
+    <span class="spacer"></span>
+    <span class="badge" title="Used for fetching your reservation history">UID: {{ uid() ?? '—' }}</span>
+    <input class="input uid" placeholder="Set UID" (keyup.enter)="saveUid($any($event.target).value)"/>
+    <ng-container *ngIf="!isLoggedIn(); else logged">
+      <a class="btn outline" routerLink="/login">Login</a>
+      <a class="btn" routerLink="/register">Register</a>
+    </ng-container>
+    <ng-template #logged>
+      <button class="btn outline" (click)="logout()">Logout</button>
+    </ng-template>
+  </div>
+</header>

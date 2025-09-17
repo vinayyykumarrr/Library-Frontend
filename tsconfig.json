@@ -1,0 +1,20 @@
+
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": false,
+    "module": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "declaration": false,
+    "sourceMap": true,
+    "outDir": "./dist/out-tsc",
+    "moduleResolution": "bundler",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "types": []
+  },
+  "files": [],
+  "include": [],
+  "references": [{ "path": "./tsconfig.app.json" }]
+}

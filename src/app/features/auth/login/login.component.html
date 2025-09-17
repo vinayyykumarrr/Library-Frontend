@@ -1,0 +1,11 @@
+
+<div class="card auth-card">
+  
+  <h2>Login</h2>
+  <form (ngSubmit)="submit()" #f="ngForm" class="grid">
+    <input class="input" name="email" [(ngModel)]="email" placeholder="Email" required type="email" />
+    <input class="input" name="password" [(ngModel)]="password" placeholder="Password" required type="password" />
+    <button class="btn" [disabled]="f.invalid || loading">{{ loading ? 'Signing in…' : 'Login' }}</button>
+    <small>Don't have an account? <a routerLink="/register">Register</a></small>
+  </form>
+</div>
